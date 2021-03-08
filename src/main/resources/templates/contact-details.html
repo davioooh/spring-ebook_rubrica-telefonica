@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title th:text="${'Contatto - ' + contact.firstName + ' ' + contact.lastName}"></title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+<div id="contact-details" class="content">
+  <h2 th:text="${contact.firstName + ' ' + contact.lastName}"></h2>
+  <div>
+    <strong>Telefono: </strong> <span th:text="${contact.phone}"></span>
+  </div>
+</div>
+</body>
+</html>

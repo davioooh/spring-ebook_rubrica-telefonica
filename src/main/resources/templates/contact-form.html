@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title>Nuovo contatto</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+<form id="new-contact-form" method="post" class="content"
+      th:action="@{/contacts/new}" th:object="${contactForm}">
+  <h2>Nuovo contatto</h2>
+  <div>
+    <label>Nome</label>
+    <input th:field="*{firstName}" type="text"/>
+  </div>
+  <div>
+    <label>Cognome</label>
+    <input th:field="*{lastName}" type="text"/>
+  </div>
+  <div>
+    <label>Telefono</label>
+    <input th:field="*{phone}" type="text"/>
+  </div>
+  <div>
+    <input type="submit" value="Invia"/>
+  </div>
+</form>
+</body>
+</html>

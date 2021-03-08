@@ -1,0 +1,12 @@
+body {
+    padding: 2rem;
+}
+
+#new-contact-form label {
+    display: block;
+    padding-bottom: .4rem;
+}
+
+#new-contact-form > div {
+    margin-bottom: 1rem;
+}
