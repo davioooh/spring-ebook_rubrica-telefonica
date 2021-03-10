@@ -14,14 +14,30 @@
   <div>
     <label>Nome</label>
     <input th:field="*{firstName}" type="text"/>
+    <div th:if="${#fields.hasErrors('firstName')}">
+      <span class="field-error" th:errors="*{firstName}"></span>
+    </div>
   </div>
   <div>
     <label>Cognome</label>
     <input th:field="*{lastName}" type="text"/>
+    <div th:if="${#fields.hasErrors('lastName')}">
+      <span class="field-error" th:errors="*{lastName}"></span>
+    </div>
   </div>
   <div>
     <label>Telefono</label>
     <input th:field="*{phone}" type="text"/>
+    <div th:if="${#fields.hasErrors('phone')}">
+      <span class="field-error" th:errors="*{phone}"></span>
+    </div>
+  </div>
+  <div>
+    <label>Email</label>
+    <input th:field="*{email}" type="text"/>
+    <div th:if="${#fields.hasErrors('email')}">
+      <span class="field-error" th:errors="*{email}"></span>
+    </div>
   </div>
   <div>
     <input type="submit" value="Invia"/>

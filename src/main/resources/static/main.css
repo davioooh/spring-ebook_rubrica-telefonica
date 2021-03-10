@@ -10,3 +10,8 @@ body {
 #new-contact-form > div {
     margin-bottom: 1rem;
 }
+
+#new-contact-form .field-error {
+    color: red;
+    font-size: .8rem;
+}
