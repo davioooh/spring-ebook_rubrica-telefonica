@@ -2,6 +2,10 @@ body {
     padding: 2rem;
 }
 
+#new-contact-form, #contact-details {
+    width: 500px;
+}
+
 #new-contact-form label {
     display: block;
     padding-bottom: .4rem;
