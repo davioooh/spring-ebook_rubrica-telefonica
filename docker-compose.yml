@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  database:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=rubrica_telefonica_db
+      - POSTGRES_PASSWORD=rubrica_pwd
+    ports:
+      - 5432:5432
