@@ -11,34 +11,16 @@
 <form id="new-contact-form" method="post" class="content"
       th:action="@{/contacts/new}" th:object="${contactForm}">
   <h2>Nuovo contatto</h2>
-  <div>
-    <label>Nome</label>
-    <input th:field="*{firstName}" type="text"/>
-    <div th:if="${#fields.hasErrors('firstName')}">
-      <span class="field-error" th:errors="*{firstName}"></span>
-    </div>
+
+  <div th:replace="form-controls :: text-input (fieldName='firstName', fieldLabel='Nome')">
   </div>
-  <div>
-    <label>Cognome</label>
-    <input th:field="*{lastName}" type="text"/>
-    <div th:if="${#fields.hasErrors('lastName')}">
-      <span class="field-error" th:errors="*{lastName}"></span>
-    </div>
+  <div th:replace="form-controls :: text-input (fieldName='lastName', fieldLabel='Cognome')">
   </div>
-  <div>
-    <label>Telefono</label>
-    <input th:field="*{phone}" type="text"/>
-    <div th:if="${#fields.hasErrors('phone')}">
-      <span class="field-error" th:errors="*{phone}"></span>
-    </div>
+  <div th:replace="form-controls :: text-input (fieldName='phone', fieldLabel='Telefono')">
   </div>
-  <div>
-    <label>Email</label>
-    <input th:field="*{email}" type="text"/>
-    <div th:if="${#fields.hasErrors('email')}">
-      <span class="field-error" th:errors="*{email}"></span>
-    </div>
+  <div th:replace="form-controls :: text-input (fieldName='email', fieldLabel='Email')">
   </div>
+
   <div>
     <input type="submit" value="Invia"/>
   </div>

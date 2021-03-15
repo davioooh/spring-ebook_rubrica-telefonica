@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>form controls</title>
+</head>
+<body>
+
+<div th:fragment="text-input (fieldName, fieldLabel)">
+  <label th:text="${fieldLabel}">label</label>
+  <input th:field="*{__${fieldName}__}" type="text"/>
+  <div th:if="${#fields.hasErrors(fieldName)}">
+    <span class="field-error" th:errors="*{__${fieldName}__}">error</span>
+  </div>
+</div>
+
+</body>
+</html>
