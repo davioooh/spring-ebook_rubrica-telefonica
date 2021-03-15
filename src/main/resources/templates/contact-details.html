@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{main-layout}">
 <head>
-  <meta charset="utf-8"/>
-  <title th:text="${'Contatto - ' + contact.firstName + ' ' + contact.lastName}"></title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-  <link rel="stylesheet" href="/main.css">
+  <title th:text="${'Contatto: ' + contact.firstName + ' ' + contact.lastName}"></title>
 </head>
 <body>
-<div id="contact-details" class="content">
-  <span th:if="${newContact != null}" class="notification is-success">
-    Contatto creato correttamente!
-  </span>
-  <h2 th:text="${contact.firstName + ' ' + contact.lastName}"></h2>
-  <div>
-    <strong>Telefono: </strong> <span th:text="${contact.phone}"></span>
+<section layout:fragment="content">
+  <div id="contact-details">
+    <span class="notification is-success" th:if="${newContact != null}">
+      Contatto creato correttamente!
+    </span>
+    <h2 th:text="${contact.firstName + ' ' + contact.lastName}"></h2>
+    <div>
+      <strong>Telefono: </strong> <span th:text="${contact.phone}"></span>
+    </div>
+    <div>
+      <strong>Email: </strong> <span th:text="${contact.email}"></span>
+    </div>
   </div>
-  <div>
-    <strong>Email: </strong> <span th:text="${contact.email}"></span>
-  </div>
-</div>
+</section>
 </body>
 </html>

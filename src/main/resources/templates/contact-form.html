@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{main-layout}">
 <head>
-  <meta charset="utf-8"/>
   <title>Nuovo contatto</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-  <link rel="stylesheet" href="/main.css">
 </head>
 <body>
-<form id="new-contact-form" method="post" class="content"
-      th:action="@{/contacts/new}" th:object="${contactForm}">
-  <h2>Nuovo contatto</h2>
+<section layout:fragment="content">
+  <form id="new-contact-form" method="post"
+        th:action="@{/contacts/new}" th:object="${contactForm}">
+    <h2>Nuovo contatto</h2>
 
-  <div th:replace="form-controls :: text-input (fieldName='firstName', fieldLabel='Nome')">
-  </div>
-  <div th:replace="form-controls :: text-input (fieldName='lastName', fieldLabel='Cognome')">
-  </div>
-  <div th:replace="form-controls :: text-input (fieldName='phone', fieldLabel='Telefono')">
-  </div>
-  <div th:replace="form-controls :: text-input (fieldName='email', fieldLabel='Email')">
-  </div>
+    <div th:replace="form-controls :: text-input (fieldName='firstName', fieldLabel='Nome')">
+    </div>
+    <div th:replace="form-controls :: text-input (fieldName='lastName', fieldLabel='Cognome')">
+    </div>
+    <div th:replace="form-controls :: text-input (fieldName='phone', fieldLabel='Telefono')">
+    </div>
+    <div th:replace="form-controls :: text-input (fieldName='email', fieldLabel='Email')">
+    </div>
 
-  <div>
-    <input type="submit" value="Invia"/>
-  </div>
-</form>
+    <div>
+      <input type="submit" value="Invia"/>
+    </div>
+  </form>
+</section>
 </body>
 </html>

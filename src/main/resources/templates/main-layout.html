@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="utf-8"/>
+  <title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE">
+    Rubrica Telefonica
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/main.css}">
+</head>
+<body>
+<div class="content">
+  <header class="main-header">
+    <a th:href="@{/}"><h1>Rubrica Telefonica</h1></a>
+  </header>
+  <section layout:fragment="content"></section>
+</div>
+</body>
+</html>

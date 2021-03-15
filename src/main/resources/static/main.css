@@ -2,6 +2,12 @@ body {
     padding: 2rem;
 }
 
+.main-header {
+    padding: .5rem 0 .5rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #eee;
+}
+
 #new-contact-form, #contact-details {
     width: 500px;
 }
