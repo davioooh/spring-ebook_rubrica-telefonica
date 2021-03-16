@@ -8,7 +8,7 @@ body {
     border-bottom: 2px solid #eee;
 }
 
-#new-contact-form, #contact-details {
+.content {
     width: 500px;
 }
 
@@ -24,4 +24,30 @@ body {
 #new-contact-form .field-error {
     color: red;
     font-size: .8rem;
+}
+
+#contacts-list .contact-item {
+    padding: .5rem 0 .5rem
+}
+
+#contacts-list .contact-item:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+#contacts-list .list-header h2 {
+    display: inline-block;
+    margin-right: .5rem;
+}
+
+#contacts-list .contact-item {
+    padding: .5rem 0 .5rem
+}
+
+#contacts-list .contact-item:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+#contacts-list .list-header h2 {
+    display: inline-block;
+    margin-right: .5rem;
 }

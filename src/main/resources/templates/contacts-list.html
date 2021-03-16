@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{main-layout}">
+<head>
+  <title>Lista contatti</title>
+</head>
+<body>
+<section layout:fragment="content">
+  <div id="contacts-list">
+    <header class="list-header">
+      <h2>Lista contatti</h2>
+      <a th:href="@{/contacts/new}">+ Nuovo contatto</a>
+    </header>
+    <ul th:unless="${#lists.isEmpty(contacts)}">
+      <li th:each="c : ${contacts}" class="contact-item">
+        <a th:href="@{/contacts(id=${c.id})}"
+           th:text="${c.firstName + ' ' + c.lastName}"></a>
+      </li>
+    </ul>
+    <small th:if="${#lists.isEmpty(contacts)}">
+      Nessun contatto presente in rubrica.
+    </small>
+  </div>
+</section>
+</body>
+</html>

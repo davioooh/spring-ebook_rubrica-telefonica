@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
 import java.sql.Statement;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -50,6 +51,13 @@ public class ContactsRepository {
     String keyAsString = keyHolder.getKeys().get("id").toString();
     contact.setId(UUID.fromString(keyAsString));
     return contact;
+  }
+
+  public List<Contact> findAll() {
+    return jdbcTemplate.query(
+      "select * from contacts",
+      new ContactRowMapper()
+    );
   }
 
   static class ContactRowMapper extends BeanPropertyRowMapper<Contact> {

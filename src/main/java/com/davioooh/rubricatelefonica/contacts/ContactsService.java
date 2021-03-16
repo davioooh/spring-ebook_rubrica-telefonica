@@ -2,6 +2,7 @@ package com.davioooh.rubricatelefonica.contacts;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -29,6 +30,10 @@ class ContactsService {
 
   public Optional<Contact> getContact(UUID contactId) {
     return contactRepository.findById(contactId);
+  }
+
+  public List<Contact> getAllContacts() {
+    return contactRepository.findAll();
   }
 
 }

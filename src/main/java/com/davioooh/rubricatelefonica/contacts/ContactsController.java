@@ -41,11 +41,17 @@ public class ContactsController {
     return new ModelAndView("redirect:/contacts?id=" + contact.getId());
   }
 
-  @GetMapping
+  @GetMapping(params = "id")
   public ModelAndView contactDetails(@RequestParam("id") UUID contactId) {
     return contactsService.getContact(contactId)
       .map(c -> new ModelAndView("contact-details").addObject("contact", c))
       .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+  }
+
+  @GetMapping
+  public ModelAndView contactsList() {
+    return new ModelAndView("contacts-list")
+      .addObject("contacts", contactsService.getAllContacts());
   }
 
 }
