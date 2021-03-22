@@ -20,6 +20,9 @@
         titolo applicazione
       </h1>
     </a>
+    <form method="post" th:action="@{/logout}" class="logout-form">
+      <input type="submit" value="Esci"/>
+    </form>
   </header>
   <section layout:fragment="content"></section>
 </div>

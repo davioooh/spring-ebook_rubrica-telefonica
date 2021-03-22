@@ -8,6 +8,16 @@ body {
     border-bottom: 2px solid #eee;
 }
 
+.main-header > * {
+    display: inline-block;
+}
+
+.main-header > .logout-form{
+    position: relative;
+    top: -0.3rem;
+    margin-left: 1rem;
+}
+
 .content {
     width: 500px;
 }
