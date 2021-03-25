@@ -4,20 +4,26 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{main-layout}">
 <head>
-  <title th:text="${'Contatto: ' + contact.firstName + ' ' + contact.lastName}"></title>
+  <title th:text="#{contacts.details.contact} + ${' ' + contact.firstName + ' ' + contact.lastName}">
+    dettaglio contatto
+  </title>
 </head>
 <body>
 <section layout:fragment="content">
   <div id="contact-details">
-    <span class="notification is-success" th:if="${newContact != null}">
-      Contatto creato correttamente!
+    <span class="notification is-success"
+          th:if="${newContact != null}"
+          th:text="#{contacts.details.save.success}">
+      contatto salvato
     </span>
     <h2 th:text="${contact.firstName + ' ' + contact.lastName}"></h2>
     <div>
-      <strong>Telefono: </strong> <span th:text="${contact.phone}"></span>
+      <strong th:text="#{contacts.details.phone}">Telefono:</strong>
+      <span th:text="${contact.phone}"></span>
     </div>
     <div>
-      <strong>Email: </strong> <span th:text="${contact.email}"></span>
+      <strong th:text="#{contacts.details.email}">Email:</strong>
+      <span th:text="${contact.email}"></span>
     </div>
   </div>
 </section>

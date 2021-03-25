@@ -4,25 +4,25 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{main-layout}">
 <head>
-  <title>Nuovo contatto</title>
+  <title th:text="#{contacts.new.title}">creazione contatto</title>
 </head>
 <body>
 <section layout:fragment="content">
   <form id="new-contact-form" method="post"
         th:action="@{/contacts/new}" th:object="${contactForm}">
-    <h2>Nuovo contatto</h2>
+    <h2 th:text="#{contacts.new.title}">creazione contatto</h2>
 
-    <div th:replace="form-controls :: text-input (fieldName='firstName', fieldLabel='Nome')">
+    <div th:replace="form-controls :: text-input (fieldName='firstName', fieldLabel=#{contacts.new.form.name})">
     </div>
-    <div th:replace="form-controls :: text-input (fieldName='lastName', fieldLabel='Cognome')">
+    <div th:replace="form-controls :: text-input (fieldName='lastName', fieldLabel=#{contacts.new.form.surname})">
     </div>
-    <div th:replace="form-controls :: text-input (fieldName='phone', fieldLabel='Telefono')">
+    <div th:replace="form-controls :: text-input (fieldName='phone', fieldLabel=#{contacts.new.form.phone})">
     </div>
-    <div th:replace="form-controls :: text-input (fieldName='email', fieldLabel='Email')">
+    <div th:replace="form-controls :: text-input (fieldName='email', fieldLabel=#{contacts.new.form.email})">
     </div>
 
     <div>
-      <input type="submit" value="Invia"/>
+      <input type="submit" th:value="#{contacts.new.submit}"/>
     </div>
   </form>
 </section>
