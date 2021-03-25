@@ -18,6 +18,11 @@ body {
     margin-left: 1rem;
 }
 
+.main-header > .logout-form > * {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
 .content {
     width: 500px;
 }

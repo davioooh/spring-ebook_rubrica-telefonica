@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
   <meta charset="utf-8"/>
   <title
@@ -20,9 +21,13 @@
         titolo applicazione
       </h1>
     </a>
-    <form method="post" th:action="@{/logout}" class="logout-form">
-      <input type="submit" th:value="#{application.logout}"/>
-    </form>
+
+    <div sec:authorize="isAuthenticated()" class="logout-form">
+      <strong sec:authentication="name" class="user"></strong>
+      <form method="post" th:action="@{/logout}">
+        <input type="submit" th:value="#{application.logout}"/>
+      </form>
+    </div>
   </header>
   <section layout:fragment="content"></section>
 </div>
