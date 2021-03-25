@@ -12,7 +12,7 @@ body {
     display: inline-block;
 }
 
-.main-header > .logout-form{
+.main-header > .logout-form {
     position: relative;
     top: -0.3rem;
     margin-left: 1rem;
@@ -22,16 +22,16 @@ body {
     width: 500px;
 }
 
-#new-contact-form label {
+form label {
     display: block;
     padding-bottom: .4rem;
 }
 
-#new-contact-form > div {
+form > div {
     margin-bottom: 1rem;
 }
 
-#new-contact-form .field-error {
+form .field-error {
     color: red;
     font-size: .8rem;
 }
