@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{main-layout}">
+<head>
+  <title>Accedi</title>
+</head>
+<body>
+<section layout:fragment="content">
+  <form class="narrow" method="post" th:action="@{/login}">
+    <h2>Accedi</h2>
+
+    <div class="notification is-danger" th:if="${param.error}">
+      Nome utente o password errati!
+    </div>
+    <div class="notification is-success" th:if="${param.logout}">
+      Hai effettuato il logout. A presto!
+    </div>
+
+    <div>
+      <label>Username</label>
+      <input name="username" type="text"/>
+    </div>
+    <div>
+      <label>Password</label>
+      <input name="password" type="password"/>
+    </div>
+
+    <div>
+      <input type="submit" value="Entra"/>
+    </div>
+  </form>
+</section>
+</body>
+</html>
