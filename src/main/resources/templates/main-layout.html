@@ -21,7 +21,7 @@
       </h1>
     </a>
     <form method="post" th:action="@{/logout}" class="logout-form">
-      <input type="submit" value="Esci"/>
+      <input type="submit" th:value="#{application.logout}"/>
     </form>
   </header>
   <section layout:fragment="content"></section>
